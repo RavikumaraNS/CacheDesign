@@ -1,4 +1,4 @@
-package com.ns.design;
+package com.ns.cache;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,11 +11,10 @@ public class CacheExample {
 
         LRUCache lruCache = new LRUCache(5);
         System.out.println("Enter the case value");
-        int value =1;
         String key;
-        while(value != 0) {
+        while(true) {
             System.out.println("value to scan: 1.Put 2. Get 0.Exit");
-            value = Integer.parseInt(bufferedReader.readLine());
+            int value = Integer.parseInt(bufferedReader.readLine());
             switch (value){
                 case 1:
                     System.out.println("Enter key");
@@ -29,6 +28,8 @@ public class CacheExample {
                     key = bufferedReader.readLine();
                     System.out.println("value for the key :"+ key + " :is:"+lruCache.get(key));
                     break;
+                case 0:
+                    System.exit(0);
                 default:
                     System.out.println("No options");
 
